@@ -43,7 +43,7 @@ class TophatSource:
        
         brightness_array[min_arg:max_arg + 1] = self.flux_density 
         if units == "mK":
-            brightness_array[min_arg:max_arg + 1] *= conv_mK(freq_use)
+            brightness_array[min_arg:max_arg + 1] *= conv_mK(freq_use).value
         elif units != "Jy":
             raise ValueError("Units not valid. Choose mK or Jy.")
             
@@ -110,7 +110,7 @@ class TophatSource:
         """
 
         xcoords, integr = self.make_freq_integr(
-            inst.freqs, 
+            inst, 
             coords=coords,
             units=units
         )
