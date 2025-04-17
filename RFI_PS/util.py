@@ -139,6 +139,13 @@ def calc_comov_los_dis(redshift,
             The (dimensionless) dark energy density.
         omega_curv (float):
             The (dimensionless) energy density due to spatial curvature.
+    Returns:
+        Ez (float):
+            Reciprocal of inverse time of flight for a photon at redshift z moving a distance dz.
+        intreg (float):
+            The integrated time of flight for a photon from redshift z to 0.
+        comobing_dist_los (float):
+            The comoving line of sight distance in Mpc/h
     """
     
     # E(z) thing
