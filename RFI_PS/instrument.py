@@ -1,6 +1,6 @@
 import numpy as np
 import scipy
-from util import bump, calc_comov_los_dis, D_H
+from .util import bump, calc_comov_los_dis, D_H
 
 f_21 = 1.4204057517667e9
 

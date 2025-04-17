@@ -1,5 +1,5 @@
 import numpy as np
-from util import get_freqs_use, conv_mK
+from .util import get_freqs_use, conv_mK
 
 class TophatSource:
     
