@@ -23,7 +23,7 @@ class Instrument:
         if frequency_taper is not None:
             if frequency_taper != "bump_function":
                 self.frequency_taper = getattr(
-                    scipy.signal, 
+                    scipy.signal.windows, 
                     frequency_taper
                 )(len(self.freqs))
                 """Array containing the values of the frequency taper at the instrumental frequencies"""

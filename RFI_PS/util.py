@@ -94,7 +94,7 @@ def calc_vol(theta_F, redshifts):
             The cosmological volume in (Mpc / h)^3
     """
     
-    vol = 2 * np.pi * (1 - np.cos(theta_F)) * D_H * quad(area_meas, redshifts[-1], redshifts[0])
+    vol = 2 * np.pi * (1 - np.cos(theta_F)) * D_H * quad(area_meas, redshifts[-1], redshifts[0])[0]
     return vol
 
 def Ez_inv(redshift, omega_matter=0.27, omega_lambda=0.73, omega_curv=0.):
@@ -152,7 +152,7 @@ def calc_comov_los_dis(redshift,
     Ez = np.sqrt(omega_matter*(1 + redshift)**3 + omega_curv*(1 + redshift)**2 + omega_lambda)
     
     # Integral thing with E(z)
-    intreg = quad(Ez_inv, 0, redshift, vec_func=False)
+    intreg = quad(Ez_inv, 0, redshift)[0]
     
     # Line of sight distances
     comoving_dist_los = D_H * intreg
